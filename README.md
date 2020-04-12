@@ -1,2 +1,2 @@
 # Online-Market
-A J2EE project
+A basic J2EE project. The test directory stores the unit test files. 
