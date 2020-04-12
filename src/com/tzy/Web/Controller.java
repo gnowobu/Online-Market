@@ -92,6 +92,12 @@ public class Controller extends HttpServlet {
 
             String userid = request.getParameter("userid");
             String password = request.getParameter("password");
+            
+            if(userid.equals("") || password.equals("")){ // avoid nullpointer exception
+                errors.add("invalid input, check again");
+                request.setAttribute("errors", errors);
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+            }
 
             Customer customer = new Customer();
             customer.setPassword(password);
